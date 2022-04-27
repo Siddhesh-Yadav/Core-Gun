@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-  const host = "https://core-gun.herokuapp.com/";
+  const host = "https://core-gun.herokuapp.com";
   
   const navigate = useNavigate();
   const [credentials, setcredentials] = useState({ email: "", password: "" });
