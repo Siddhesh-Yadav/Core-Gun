@@ -2,7 +2,7 @@ import React,{ useState } from "react";
 import nftContext from "./nftContext";
 
 const State = (props) => {
-    const host = "http://localhost:5000";
+    const host = "https://core-gun.herokuapp.com/";
     const marketNftIntial =[];
     const [marketNfts, setmarketNfts] = useState(marketNftIntial);
     const myNftInitial = [];
