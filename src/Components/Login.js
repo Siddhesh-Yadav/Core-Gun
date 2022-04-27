@@ -1,0 +1,76 @@
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
+
+const Login = () => {
+  const host = "http://localhost:5000";
+  
+  const navigate = useNavigate();
+  const [credentials, setcredentials] = useState({ email: "", password: "" });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`${host}/api/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: credentials.email,
+        password: credentials.password,
+      }),
+    });
+    const json = await response.json();
+    if(json.success){
+      // login and redirect 
+      localStorage.setItem('token', json.authtoken);
+      navigate('/');
+    }
+      
+  };
+
+  const onChange = (e) => {
+    setcredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
+  return (
+    <div>
+      <h1>My Notes App</h1>
+      <form action="" onSubmit={handleSubmit}>
+        <div className="mb-3 row my-3">
+          <label htmlFor="email" className="col-sm-2 col-form-label">
+            Email
+          </label>
+          <div className="col-sm-10">
+            <input
+              type="text"
+              className="form-control-plaintext bg-dark text-light"
+              id="email"
+              name="email"
+              value={credentials.email}
+              onChange={onChange}
+            />
+          </div>
+        </div>
+        <div className="mb-3 row my-3">
+          <label htmlFor="password" className="col-sm-2 col-form-label">
+            Password
+          </label>
+          <div className="col-sm-10">
+            <input
+              type="password"
+              className="form-control bg-dark text-light"
+              id="password"
+              name="password"
+              value={credentials.password}
+              onChange={onChange}
+            />
+          </div>
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default Login;
