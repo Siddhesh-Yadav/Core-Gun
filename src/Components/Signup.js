@@ -138,8 +138,8 @@ const Signup = () => {
           </div>
         </div>
         
-        <button type="submit"  className="custom-btn Btn"><span>Signup</span></button>
-        <button onClick={logIn} className="custom-btn Btn"><span>Login</span></button>
+        <button type="submit"  className="custom-btn Btn green"><span>Signup</span></button>
+        <button onClick={logIn} className="custom-btn Btn green"><span>Login</span></button>
       </form>
     </div>
   );

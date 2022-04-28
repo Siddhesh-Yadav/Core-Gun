@@ -69,8 +69,8 @@ const Login = () => {
             />
           </div>
         </div>
-        <button type="submit"  className="custom-btn Btn"><span>Login</span></button>
-        <button onClick={signUp} className="custom-btn Btn"><span>Signup</span></button>
+        <button type="submit"  className="custom-btn Btn green"><span>Login</span></button>
+        <button onClick={signUp} className="custom-btn Btn green"><span>Signup</span></button>
         
       </form>
     </div>

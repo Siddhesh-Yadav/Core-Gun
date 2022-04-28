@@ -10,12 +10,25 @@ const Home = () => {
     }, []);
     const { addNfts } = context;
 
-    const [nftVal, setnftVal] = useState({title:"", description:"", tag:"", img:"", price:""})
+    const [nftVal, setnftVal] = useState({title:"", description:"", tag:"", img:"", price:""});
     const onChange = (e) =>{
         setnftVal({...nftVal,[e.target.name]:e.target.value})
     }
+
+    const [textColor, settextColor] = useState("");
     const handleClick = (e)=>{
         e.preventDefault();
+        if (nftVal.title===""|| nftVal.description===""|| nftVal.tag===""|| nftVal.img===""|| nftVal.price==="") {
+          settextColor("text-danger");
+          setTimeout(() => {
+            settextColor("");            
+          }, 700);
+        }else{          
+          settextColor("text-success");
+          setTimeout(() => {
+            settextColor("");            
+          }, 700);
+        }
         addNfts(nftVal.title, nftVal.description, nftVal.tag, nftVal.img, nftVal.price);
         setnftVal({title:"", description:"", tag:"", img:"", price:""})
     }
@@ -27,8 +40,8 @@ const Home = () => {
     }
   
     return (
-      <div className='container'>
-      <h2 style={{textAlign:"center"}}>Create NFT</h2>
+      <form className='container .was-validated'>
+      <h2 className={`${textColor}`} style={{textAlign:"center"}}>Create NFT</h2>
       <div className="mb-3">
         <label htmlFor="title" className="form-label">
           Title
@@ -42,6 +55,7 @@ const Home = () => {
           onChange={onChange}
           value={nftVal.title}
           style={{padding:"0 20px"}}
+          required
         />
       </div>
       <div className="mb-3">
@@ -56,6 +70,7 @@ const Home = () => {
           placeholder="#General"
           onChange={onChange}
           value={nftVal.tag}
+          required
         />
       </div>
       <div className="mb-3">
@@ -69,39 +84,38 @@ const Home = () => {
           rows="3"
           onChange={onChange}
           value={nftVal.description}
+          required
         ></textarea>
       </div>
       <div className="mb-3">
         <label htmlFor="img" className="form-label">
           Img Link
         </label>
-        <textarea
+        <input
           className="form-control bg-dark text-light"
           id="img"
           name='img'
-          rows="3"
           onChange={onChange}
           value={nftVal.img}
           placeholder="Provide link to your image"
-        ></textarea>
+        ></input>
       </div>
       <div className="mb-3">
         <label htmlFor="price" className="form-label">
           Price
         </label>
-        <textarea
+        <input
           className="form-control bg-dark text-light"
           id="price"
           name='price'
-          rows="3"
           onChange={onChange}
           value={nftVal.price}
-        ></textarea>
+        ></input>
       </div>
       <div className="text-center">
-        <button type="submit" onClick={handleClick} className="custom-btn Btn"><span>Create</span></button>
+        <button type="submit" onClick={handleClick} className="custom-btn Btn green"><span>Create</span></button>
       </div>
-    </div>
+    </form>
     )
 }
 

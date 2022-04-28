@@ -298,11 +298,13 @@ body {
     color:#0FFF50;
     font-weight: bolder;
     font-size: large;
+    transition: all 0.1s ease-in;
   }
   .red:active{
     color:red;
     font-weight: bolder;
     font-size: large;
+    transition: all 0.1s ease-in;
   }
   .Btn:hover:before {
     height: 100%;

@@ -18,7 +18,7 @@ const Setting = () => {
         setcredentials({ ...credentials, [e.target.name]: e.target.value });
       };
   return (
-    <div>
+    <div className="container">
       <h1 style={{textAlign:"center"}}>Edit User Details</h1>
       <form action="" onSubmit={handleSubmit}>
         <div className="input-group mb-3 my-3">
@@ -69,7 +69,7 @@ const Setting = () => {
           </div>
         </div>
         <div className="text-center">
-        <button type="submit" className="custom-btn Btn"><span>Update</span></button>
+        <button type="submit" className="custom-btn Btn green"><span>Update</span></button>
         </div>
       
       </form>
