@@ -10,7 +10,7 @@ const Cart = () => {
     }, []);
   return (
     <div className="container ]">
-      <h2>Cart Items</h2>
+      <h1 style={{textAlign:"center"}}>Cart Items</h1>
       <div className='row'>
           {cartNfts.map((nft)=>{ 
             return <Card cart={true} nft={nft} addNftToCart={addNftToCart} editUser={editUser} key={nft._id}/>         

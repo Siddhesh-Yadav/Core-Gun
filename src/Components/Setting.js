@@ -19,6 +19,7 @@ const Setting = () => {
       };
   return (
     <div>
+      <h1 style={{textAlign:"center"}}>Edit User Details</h1>
       <form action="" onSubmit={handleSubmit}>
         <div className="input-group mb-3 my-3">
           <label htmlFor="name" className="col-sm-2 col-form-label">
@@ -67,9 +68,10 @@ const Setting = () => {
             />
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <div className="text-center">
+        <button type="submit" className="custom-btn Btn"><span>Update</span></button>
+        </div>
+      
       </form>
     </div>
   );

@@ -27,7 +27,7 @@ const Home = () => {
     }
   
     return (
-      <div className='container '>
+      <div className='container'>
       <h2 style={{textAlign:"center"}}>Create NFT</h2>
       <div className="mb-3">
         <label htmlFor="title" className="form-label">
@@ -98,14 +98,9 @@ const Home = () => {
           value={nftVal.price}
         ></textarea>
       </div>
-
-      <button
-        type="submit"
-        className="btn btn-primary"
-        onClick={handleClick}
-      >
-        Create
-      </button>
+      <div className="text-center">
+        <button type="submit" onClick={handleClick} className="custom-btn Btn"><span>Create</span></button>
+      </div>
     </div>
     )
 }

@@ -10,6 +10,7 @@ const Market = () => {
     }, []);
   return (
     <div className="container">
+      <h1 style={{textAlign:"center"}}>Buy NFTs</h1>
       <div className='row'>
         {marketNfts.map((nft)=>{ 
           return <Card market={true} nft={nft} addNftToCart={addNftToCart} key={nft._id}/>         
