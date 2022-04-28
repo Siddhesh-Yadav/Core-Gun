@@ -7,18 +7,18 @@ const Card = (props) => {
   let button;
   if (cart) {
     button = (
-      <button onClick={() => editUser(null, null, null, nft._id)} className="custom-btn Btn"><span>Remove</span></button>
+      <button onClick={() => editUser(null, null, null, nft._id)} className="custom-btn Btn red"><span>Remove</span></button>
     );
   } else if (market) {
     button = (
-      <button onClick={() => addNftToCart(nft._id)} className="custom-btn Btn"><span>Add to Cart</span></button>
+      <button onClick={() => addNftToCart(nft._id)} className="custom-btn Btn green"><span>Add to Cart</span></button>
     );
   } else {
     button = [
-      <button onClick={() => deleteNft(nft._id)} className="custom-btn Btn">
+      <button onClick={() => deleteNft(nft._id)} className="custom-btn Btn red">
         <span>Delete NFT</span>
       </button>,
-      <button  className="custom-btn Btn">
+      <button  className="custom-btn Btn green">
         <span>Edit NFT</span>
       </button>
     ];
@@ -44,7 +44,7 @@ const Card = (props) => {
         </div>
         <div style={{display:"flex"}}>
           {button}
-          {market||cart?<button className="custom-btn Btn"><span>Buy Now</span></button>:<></>}
+          {market||cart?<button className="custom-btn Btn green"><span>Buy Now</span></button>:<></>}
         </div>
       </div>
     </div>

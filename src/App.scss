@@ -294,6 +294,16 @@ body {
     color: $tertury;
     background: transparent;
   }
+  .green:active{
+    color:#0FFF50;
+    font-weight: bolder;
+    font-size: large;
+  }
+  .red:active{
+    color:red;
+    font-weight: bolder;
+    font-size: large;
+  }
   .Btn:hover:before {
     height: 100%;
   }
