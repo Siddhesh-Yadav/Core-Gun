@@ -38,9 +38,10 @@ const Home = () => {
           className="form-control bg-dark text-light"
           id="title "
           name='title'
-          placeholder="Your Title"
+          placeholder="@example... Bored Ape"
           onChange={onChange}
           value={nftVal.title}
+          style={{padding:"0 20px"}}
         />
       </div>
       <div className="mb-3">
@@ -81,6 +82,7 @@ const Home = () => {
           rows="3"
           onChange={onChange}
           value={nftVal.img}
+          placeholder="Provide link to your image"
         ></textarea>
       </div>
       <div className="mb-3">
@@ -102,7 +104,7 @@ const Home = () => {
         className="btn btn-primary"
         onClick={handleClick}
       >
-        Add Nft
+        Create
       </button>
     </div>
     )

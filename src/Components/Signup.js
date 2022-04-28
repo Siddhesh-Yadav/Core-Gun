@@ -35,9 +35,13 @@ const Signup = () => {
   const onChange = (e) => {
     setcredentials({ ...credentials, [e.target.name]: e.target.value });
   };
+  const logIn=()=>{
+    navigate("/login")
+  }
 
   return (
-    <div>
+    <div className="text-center">
+      <h1>Create a user account</h1>
       <form action="" onSubmit={handleSubmit}>
         <div className="input-group mb-3 my-3">
           <label htmlFor="name" className="col-sm-2 col-form-label">
@@ -67,6 +71,7 @@ const Signup = () => {
               name="email"
               value={credentials.email||""}
               onChange={onChange}
+              placeholder="Email must be valid"
             />
           </div>
         </div>
@@ -82,6 +87,7 @@ const Signup = () => {
               name="img"
               value={credentials.img||""}
               onChange={onChange}
+              placeholder="Provide link to your image"
             />
           </div>
         </div>
@@ -112,6 +118,7 @@ const Signup = () => {
               name="password"
               value={credentials.password||""}
               onChange={onChange}
+              placeholder="Password must be 6 characters long"
             />
           </div>
         </div>
@@ -130,9 +137,9 @@ const Signup = () => {
             />
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        
+        <button type="submit"  className="custom-btn Btn"><span>Signup</span></button>
+        <button onClick={logIn} className="custom-btn Btn"><span>Login</span></button>
       </form>
     </div>
   );

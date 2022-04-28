@@ -86,7 +86,7 @@ const Navbar = () => {
             >
               {userName}
             </Link>
-              <div className="dropdown" tabIndex="1">
+              <div className={`dropdown ${disabled?"disable-link":""}`} tabIndex="1">
                 <img className="userImg" src={user.img} alt="Img"/>             
                 <div className={`dropdown-content ${Class}`}>
                   <p onClick={handleClick}>Settings</p>

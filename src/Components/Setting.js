@@ -48,6 +48,7 @@ const Setting = () => {
               name="img"
               value={credentials.img || ""}
               onChange={onChange}
+              placeholder="Provide link to your image"
             />
           </div>
         </div>

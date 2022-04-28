@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-
 const Login = () => {
   const host = "https://core-gun.herokuapp.com";
   
@@ -31,9 +30,12 @@ const Login = () => {
   const onChange = (e) => {
     setcredentials({ ...credentials, [e.target.name]: e.target.value });
   };
+  const signUp=()=>{
+    navigate("/signup")
+  }
   return (
-    <div>
-      <h1>My Notes App</h1>
+    <div className="text-center">
+      <h1>Login to your account</h1>
       <form action="" onSubmit={handleSubmit}>
         <div className="mb-3 row my-3">
           <label htmlFor="email" className="col-sm-2 col-form-label">
@@ -47,6 +49,7 @@ const Login = () => {
               name="email"
               value={credentials.email}
               onChange={onChange}
+              placeholder="Email must be valid"
             />
           </div>
         </div>
@@ -62,12 +65,13 @@ const Login = () => {
               name="password"
               value={credentials.password}
               onChange={onChange}
+              placeholder="Password must be 6 characters longs"
             />
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <button type="submit"  className="custom-btn Btn"><span>Login</span></button>
+        <button onClick={signUp} className="custom-btn Btn"><span>Signup</span></button>
+        
       </form>
     </div>
   );

@@ -9,7 +9,8 @@ const Cart = () => {
         getCartNfts();
     }, []);
   return (
-    <div className="container">
+    <div className="container ]">
+      <h2>Cart Items</h2>
       <div className='row'>
           {cartNfts.map((nft)=>{ 
             return <Card cart={true} nft={nft} addNftToCart={addNftToCart} editUser={editUser} key={nft._id}/>         
