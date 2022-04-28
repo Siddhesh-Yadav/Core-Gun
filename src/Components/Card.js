@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import nftContext from "../context/nftContext";
 
 const Card = (props) => {
-  const { nft, addNftToCart, editUser, cart, deleteNft, editNft, market } =
+  const { nft, addNftToCart, editUser, cart, deleteNft, editNft, market, refresh } =
     props;
   let button;
   if (cart) {
@@ -16,13 +16,14 @@ const Card = (props) => {
   } else {
     button = [
       <button onClick={() => deleteNft(nft._id)} className="custom-btn Btn">
-        Delete NFT
+        <span>Delete NFT</span>
       </button>,
-      <button onClick={() => editNft(nft._id)} className="custom-btn Btn">
-        Edit NFT
+      <button  className="custom-btn Btn">
+        <span>Edit NFT</span>
       </button>
     ];
   }
+  // onClick={() => editNft(nft._id)}
   return (
     <div className="col-lg-4">
       <div className="card" style={{width: "18rem"}}>

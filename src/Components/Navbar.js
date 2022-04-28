@@ -35,7 +35,7 @@ const Navbar = () => {
   }
   return (
     <>
-      <nav id="nav">
+      <nav id="nav" className="sticky-top">
         <ul >
           <li><Link id="logoText" className={`navItem ${disabled?"disable-link":""}`} to="/">
             {/* <img style={{width:"48px"}} src="./gun.png" alt="Preview - White Gun Icon Png@nicepng.com"/> */}

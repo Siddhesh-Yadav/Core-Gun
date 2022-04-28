@@ -158,6 +158,10 @@ const State = (props) => {
       });
       const json = await response.json();
       setuser(json);
+      console.log(cartNfts);
+      const indx = cartNfts.findIndex(obj => obj._id == cartId);
+      const newItems = cartNfts.slice(0, indx).concat(cartNfts.slice(indx + 1, cartNfts.length));
+      setcartNfts(newItems);
     }
 
     return (

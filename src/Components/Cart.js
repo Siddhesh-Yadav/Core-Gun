@@ -8,12 +8,15 @@ const Cart = () => {
     useEffect(() => {
         getCartNfts();
     }, []);
+    const refresh =()=>{
+      getCartNfts();
+    }
   return (
     <div className="container ]">
       <h1 style={{textAlign:"center"}}>Cart Items</h1>
       <div className='row'>
           {cartNfts.map((nft)=>{ 
-            return <Card cart={true} nft={nft} addNftToCart={addNftToCart} editUser={editUser} key={nft._id}/>         
+            return <Card cart={true} refresh={refresh} nft={nft} addNftToCart={addNftToCart} editUser={editUser} key={nft._id}/>         
           })}
       </div>
     </div>
