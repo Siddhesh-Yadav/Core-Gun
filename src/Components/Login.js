@@ -49,7 +49,7 @@ const Login = () => {
               name="email"
               value={credentials.email}
               onChange={onChange}
-              placeholder="Email must be valid"
+              placeholder="Email must be valid     dummy email-test1@gmail.com"
             />
           </div>
         </div>
@@ -65,7 +65,7 @@ const Login = () => {
               name="password"
               value={credentials.password}
               onChange={onChange}
-              placeholder="Password must be 6 characters longs"
+              placeholder="Password must be 6 characters longs   dummy password-test1zzz"
             />
           </div>
         </div>
